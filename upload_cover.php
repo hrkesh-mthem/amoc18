@@ -82,7 +82,7 @@ if(isset($_FILES['file']['name']))
                       if ($insert_img) {
     
                          echo "Img inserted successfully";
-						// header("refresh:0;url=user_page.php");
+						header("refresh:0;url=user_page.php");
                                        }
                        else{
                               echo "There is something wrong with this code. Eff!";

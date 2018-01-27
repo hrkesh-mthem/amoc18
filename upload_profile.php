@@ -61,7 +61,7 @@ if(isset($_FILES['file']['name']))
                                    }
 
                                  $row = mysqli_fetch_array($sql);
-                        if ($sql) {
+                        if (!$sql) {
                           
 						     //$delet = mysqli_query($conn," DELETE FROM profile WHERE id = 'user_name' ");
 						
@@ -82,7 +82,7 @@ if(isset($_FILES['file']['name']))
                       if ($insert_img) {
     
                          echo "Img inserted successfully";
-						// header("refresh:0;url=user_page.php");
+						 header("refresh:0;url=user_page.php");
                                        }
                        else{
                               echo "There is something wrong with this code. Eff!";
