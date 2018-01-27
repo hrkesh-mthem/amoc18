@@ -118,7 +118,7 @@ body {
   <br>
   <br>
   <a href="user_about.php">About</a>
-  <a href="#services">My Gallary</a>
+  <a href="user_gallary.php">My Gallary</a>
   <a href="#contact">Contact</a>
 </div>
 
