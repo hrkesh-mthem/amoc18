@@ -79,7 +79,7 @@ body, html {
 <div id="Home" class="tabcontent">
   <h3>Home</h3>
   <p>Home is where the heart is..</p>
-  <form action="upload_img.php" method="POST" enctype="multipart/form-data">
+  <form action="upload_img_gallary.php" method="POST" enctype="multipart/form-data">
 	
 	<input type="file" onchange="previewFile()" name = "file"><br>
 	<div class= "preview">

@@ -32,17 +32,6 @@ img {
 </style>
 </head>
 <div>
-<form action="upload_profile.php" method="POST" enctype="multipart/form-data">
-	
-	<input type="file" onchange="previewFile()" name = "file"><br>
-<img src="" height="200" alt="Image preview..." height ="150px" width='150px'><br><br>
-
-	<input type="submit" value="submit">
- 
-</form>
-
-</div>
-<div>
 <form action="upload_cover.php" method="POST" enctype="multipart/form-data">
 	
 	<input type="file" onchange="previewFile()" name = "file"><br>
@@ -51,8 +40,6 @@ img {
 	<input type="submit" value="submit">
  
 </form>
-
-
 
 </div>
 

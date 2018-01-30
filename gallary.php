@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>#myImg {
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-#myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
+.myImg:hover {opacity: 0.7;}
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9); 
 }
 
-/* Modal Content (image) */
-.modal-content {
+.modal-content,#caption {
     margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
 }
 
-/* Caption of Modal Image */
 #caption {
     margin: auto;
     display: block;
@@ -44,7 +42,7 @@
     height: 150px;
 }
 
-/* Add Animation */
+
 .modal-content, #caption {    
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
@@ -62,7 +60,6 @@
     to {transform:scale(1)}
 }
 
-/* The Close Button */
 .close {
     position: absolute;
     top: 15px;
@@ -101,8 +98,6 @@ $database = "photograph";
 $conn = mysqli_connect($servername, $username, $password);
 mysqli_select_db($conn,$database);
 session_start();
-
-//$user_name = $_SESSION["USERNAME"];
 $user_name = 'yash';
 
 $query = mysqli_query($conn,"SELECT id FROM gallary where name = '$user_name'");
@@ -114,9 +109,10 @@ while($yas = mysqli_fetch_assoc($query))
 foreach($IDstore as $id){
 
 $sql = "select image from gallary where id = $id";
+$que="select image_name from gallary where id=$id";
 $result = mysqli_query($conn,$sql);
-
-if (!$result) {
+$res=mysqli_query($conn,$que);
+if (!$result || !$res) {
     printf("Error: %s\n", mysqli_error($conn));
     exit();
 }
@@ -127,59 +123,36 @@ if (!$result) {
 
 
 
-while($row = mysqli_fetch_array($result)){
-	
-	
+while(($row = mysqli_fetch_array($result) )&& ($pic = mysqli_fetch_array($res))){
 	?>
-	
-	<img src="<?=$row[0]?>" width="175" height="200" alt="image not find" id="myImg">
-	
-	 <!-- <img id="myImg" src="img_avatar.png" alt="Trolltunga, Norway" width="300" height="200"> -->
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<img  class="myImg" src="<?=$row[0]?>" width="175" height="200" alt="<?=$pic[0]?>">
 <div id="myModal" class="modal">
-  <span class="close">&times;</span>
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg');
-var modalImg = document.getElementById("img01");
-
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = img.src;
+<?php	
 }
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
-
-	
-	
-	
-	
-	
-	
-	<?php
-	
-	
-}
-
-//$image = $row['image'];
-
-//$image_src = "upload/".$image;
 }
 ?>
+<script>
+var modal = document.getElementById('myModal');
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
+});
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+</script>
 </body>
 </html>
 

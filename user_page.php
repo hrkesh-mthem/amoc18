@@ -113,18 +113,23 @@ body {
 
 <div class="sidenav">
 
+<form action="user_profile.php" method="POST" enctype="multipart/form-data">
   <br>
   <img src="<?=$row[0]?>" width="175" height="175" alt ="Set Profile Pic" id="id1">  
   <br>
+  <input type="submit" value="Update Profile Photo">
+</form>
   <br>
+  <a href="user_gallary.php">My Gallary</a>
   <a href="user_about.php">About</a>
-  <a href="#services">My Gallary</a>
   <a href="#contact">Contact</a>
 </div>
 
 <div class="main">
-  
+  <form action="user_cover.php" method="POST" enctype="multipart/form-data">
  <img src="<?=$row1[0]?>" alt="Nature" class="cover">
+ <input type="submit" value="Update Cover Photo">
+ </form>
  <div class="text_block"> 
     <h4>Nature</h4>
     <p>What a beautiful sunrise</p>
