@@ -1,7 +1,18 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "photograph";
+
+
+$conn = mysqli_connect($servername, $username, $password);
+mysqli_select_db($conn,$database);?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="StyleSheet.css" rel="stylesheet" />
 <style>
 html {
     height: 100%;
@@ -20,9 +31,11 @@ body{
     padding: 20px;
     text-align: center;
 }
-</style>
+.row {
+    margin: 10px -16px;
+	padding:8px;
+}
 
-<style>
 .dropbtn {
     background-color: #4CAF50;
 	width:150px;
@@ -67,10 +80,6 @@ body{
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
-</style>
-</style>
-<style>
-
  .sidenav {
     height: 100%;
     width: 0;
@@ -305,162 +314,6 @@ overflow:hidden;
     background-color: #555
 }
 
-</style>
-</head>
-<body>
-<div class="bg">
-<!--<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-</div>-->
-
-
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a onclick="document.getElementById('id01').style.display='block'" style="width:auto; cursor:pointer">Signup</a>
-  <a  onclick="document.getElementById('id02').style.display='block'" style="width:auto; cursor:pointer">Log-in</a>
-  <a href="#">Competitions</a>
-  <a href="#">Contact</a>
-</div>
-
-<div id="main">
-  <div class="header">
-  <h1>CAM</h1>
-</div>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-</div>
-
- <div class="dropdown">
-  <button class="dropbtn">Ongoing Contests</button>
-  <div class="dropdown-content">
-    <a href="#">Contest 1</a>
-    <a href="#">Contest 2</a>
-    <a href="#">Contest 3</a>
-  </div>
-</div>
-<!--<div id="mysidenav" class="Sidenav">
-  <a href="#" id="Signup">Signup</a>
-  <a href="#" id="Log-in">Log-in</a>
-  <a href="#" id="Competitions">Competitions</a>
-  <a href="#" id="Contact">Contact</a>
-</div>-->
-<div class="slideshow-container">
-
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="bulb.jpg" style="width:100%;height:100%;">
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="boat.jpg" style="width:100%;height:100%;">
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="eye.jpg" style="width:100%;height:100%;">
-</div>
-
-</div>
-<br>
-
-<div style="padding-left:42%">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
-<!--<div style="width:50%" class="bgimg">
-  <div class="topleft">
-    <a href="#">Register</a>
-  </div>
-  <div class="middle">
-    <h1>AMOC</h1>
-    <hr>
-    <p id="demo" style="font-size:30px"></p>
-  </div>
-  </div>-->
-  
-</div>
-
-
-<script>
-var countDownDate = new Date("Feb 8, 2018 15:37:25").getTime();
-
-var countdownfunction = setInterval(function() {
-
-    
-    var now = new Date().getTime();
-    
-    
-    var distance = countDownDate - now;
-    
-   
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
- 
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-    
-
-    if (distance < 0) {
-        clearInterval(countdownfunction);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-    }
-}, 1000);
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 3000);
-}
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
-}
-</script>     
-</body>
-
-
-
-<!-- Signup Form-->
-
-
-<style>
-
 input[type=text], input[type=password] {
     width: 40%;
     padding: 12px 20px;
@@ -561,11 +414,7 @@ float:left;
 width:100px;
  margin: 10px 10px;
  }
-</style>
 
-
-
-<style>
 .modal2 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -597,8 +446,160 @@ span.forget {
 }
 </style>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+<script src="js/jquery.flexslider-min.js"></script>
+
 <script>
 
+$(document).ready(function () {
+
+$('.flexslider').flexslider({
+
+animation: 'fade',
+
+controlsContainer: '.flexslider'
+
+});
+
+});
+
+</script>
+</head>
+<body>
+<div class="bg">
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a onclick="document.getElementById('id01').style.display='block'" style="width:auto; cursor:pointer">Signup</a>
+  <a  onclick="document.getElementById('id02').style.display='block'" style="width:auto; cursor:pointer">Log-in</a>
+  <a href="#">Competitions</a>
+  <a href="#">Contact</a>
+</div>
+
+<div id="main">
+  <div class="header">
+  <h1>CAM</h1>
+</div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+</div>
+
+ <div class="dropdown">
+  <button class="dropbtn">Ongoing Contests</button>
+  <div class="dropdown-content">
+    <a href="#">Contest 1</a>
+    <a href="#">Contest 2</a>
+    <a href="#">Contest 3</a>
+  </div>
+</div>
+
+<div class="container">
+
+<h2>Competition 1</h2>
+
+<div class="flexslider">
+
+<ul class="slides">
+
+                    <?php
+
+// Creating query to fetch state information from mysql database table.
+
+$state_query = "select * from gallary";
+
+$state_result = mysqli_query($conn,$state_query);
+
+while($r = mysqli_fetch_array($state_result)){ ?>
+
+<li>
+
+<img src="uploads/<?php echo $r['image_name'];?>" />
+
+</li>
+
+<?php } ?>
+
+</ul>
+
+</div>
+
+
+</div>
+  <div class="footer">
+
+<p>&copy; 2018 All rights reserved by
+
+<a href="homepage.php" target="_blank">Photology.in</a>
+</div>
+
+</div>
+
+
+<script>
+var countDownDate = new Date("Feb 8, 2018 15:37:25").getTime();
+
+var countdownfunction = setInterval(function() {
+
+    
+    var now = new Date().getTime();
+    
+    
+    var distance = countDownDate - now;
+    
+   
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+ 
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+
+    if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 3000);
+}
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
 
 function validate()
 {
@@ -683,30 +684,13 @@ if(y!=x)
     
 	  <div>
 	     <button type="submit" class="signupbtn" value="submit">Login</button>
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
 		
       <span class="forget">Forgot <a href="#">password?</a></span>
       </div>
     
   </form>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
 // Get the modal
 var modal1 = document.getElementById('id01');
@@ -722,43 +706,5 @@ window.onclick = function(event) {
 }
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
 </html> 
