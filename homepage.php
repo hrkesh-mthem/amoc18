@@ -35,7 +35,12 @@ body{
     margin: 10px -16px;
 	padding:8px;
 }
+.column {
+     padding: 8px;
+    float: left;
+    width: 33.33%;
 
+}
 .dropbtn {
     background-color: #4CAF50;
 	width:150px;
@@ -479,26 +484,25 @@ controlsContainer: '.flexslider'
 
 <div id="main">
   <div class="header">
-  <h1>CAM</h1>
+  <h1>Photology</h1>
 </div>
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 </div>
+<div class="row">
+<?php 
+$result = mysqli_query($conn,"SELECT * FROM competition");
 
- <div class="dropdown">
-  <button class="dropbtn">Ongoing Contests</button>
-  <div class="dropdown-content">
-    <a href="#">Contest 1</a>
-    <a href="#">Contest 2</a>
-    <a href="#">Contest 3</a>
-  </div>
-</div>
 
-<div class="container">
 
-<h2>Competition 1</h2>
-
+ while($row = mysqli_fetch_assoc($result)){
+ 
+ 
+     ?>
+<div class="column">
+   <!-- <div class="content">-->
+<div class="container"> 
+<?php echo '<p style="text-align:center;font-size:25px"> '.$row['Competition_name'].' </p>' ?>
 <div class="flexslider">
-
 <ul class="slides">
 
                     <?php
@@ -510,30 +514,23 @@ $state_query = "select * from gallary";
 $state_result = mysqli_query($conn,$state_query);
 
 while($r = mysqli_fetch_array($state_result)){ ?>
-
 <li>
 
 <img src="uploads/<?php echo $r['image_name'];?>" />
 
 </li>
-
 <?php } ?>
 
 </ul>
-
 </div>
-
-
-</div>
-  <div class="footer">
-
-<p>&copy; 2018 All rights reserved by
-
-<a href="homepage.php" target="_blank">Photology.in</a>
 </div>
 
 </div>
-
+<?php
+ }
+ ?>
+</div>
+</div>
 
 <script>
 var countDownDate = new Date("Feb 8, 2018 15:37:25").getTime();
@@ -600,6 +597,7 @@ function closeNav() {
     document.getElementById("main").style.marginLeft= "0";
     document.body.style.backgroundColor = "white";
 }
+
 
 function validate()
 {
