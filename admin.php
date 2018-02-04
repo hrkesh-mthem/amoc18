@@ -1,15 +1,6 @@
 
 <html>
 <head>
-<style>
-div.absolute2{
-	top:400px;
-	left:400px;
-	position: absolute;
-	
-}
-</style>
-
 <script>
  
 function validation(){
@@ -50,41 +41,30 @@ else if(year==current_year && month == current_month && day <= current_day){
 	window.alert("Enter Valid Day");
     return false;	
 }
-
-function clearField() {
-   if(document.getElementById) {
-      document.counter.reset();
-   }
-}
 	
 }
-
-
-
-function submitForm()
-{
-  if(validation())
-  {
-    document.forms["counter"].submit(); 
-    document.forms["counter"].reset(); 
-  }
-}
-
-submitForm();
 </script>
 </head>
 
-<div class= "absolute2">
-
-<form name = "counter" method="post"  action="Competition.php">
-
-<input type = "Number" name ="year">
-<input type = "Number" name ="month">
-<input type = "Number" name ="day">
+<div>
+<h1>Add Competitions</h1>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<form name = "counter" method="post" onsubmit="return validation()" action="Competition.php">
+<h2>Competition Name</h2>
 <input type = "text" name ="number">
-
+<br>
+<h2>Date of competition</h2>
+<p>Date</p>
+<input type = "Number" name ="day">
+<p>Month</p>
+<input type = "Number" name ="month">
+<p>Year</p>
+<input type = "Number" name ="year"><br><br>
 <input type = "submit" value = "submit">
-
 </form>
 </div>
 </html>

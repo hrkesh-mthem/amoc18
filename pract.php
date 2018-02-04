@@ -473,6 +473,7 @@ controlsContainer: '.flexslider'
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a onclick="document.getElementById('id01').style.display='block'" style="width:auto; cursor:pointer">Signup</a>
   <a  onclick="document.getElementById('id02').style.display='block'" style="width:auto; cursor:pointer">Log-in</a>
+  <a href="Competition.php">Competitions</a>
   <a href="#">Contact</a>
 </div>
 
@@ -510,7 +511,7 @@ $state_result = mysqli_query($conn,$state_query);
 while($r = mysqli_fetch_array($state_result)){ ?>
 <li>
 
-<img src="uploads/<?php echo $r['image_name'];?>" / style="height:400px">
+<img src="uploads/<?php echo $r['image_name'];?>" />
 
 </li>
 <?php } ?>

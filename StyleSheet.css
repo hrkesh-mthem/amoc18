@@ -58,6 +58,7 @@ margin:0px auto;
 html[xmlns] .slides { display: block; }
 * html .slides { height: 1%; }
 .flexslider .slides { zoom: 1; }
+/*
 .flex-direction-nav a {
     display: block;
     position: absolute;
@@ -123,7 +124,7 @@ html[xmlns] .slides { display: block; }
 .flex-control-nav li {
     display: inline-block;
     zoom: 1;
-}
+}*/
 .flex-control-paging li a {
     display: block;
     cursor: pointer;

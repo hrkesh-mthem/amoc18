@@ -98,8 +98,12 @@ $database = "photograph";
 $conn = mysqli_connect($servername, $username, $password);
 mysqli_select_db($conn,$database);
 session_start();
-$user_name = 'yash';
 
+if(isset($_SESSION["USERNAME"])){
+$user_name = $_SESSION["USERNAME"];
+}else{
+$user_name = 'yash';
+}
 $query = mysqli_query($conn,"SELECT id FROM gallary where name = '$user_name'");
 while($yas = mysqli_fetch_assoc($query))
 {
