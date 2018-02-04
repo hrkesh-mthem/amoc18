@@ -142,6 +142,7 @@ width:100px;
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
 }
+<<<<<<< HEAD
 
 .modal2-content {
     background-color: #80ffff;
@@ -197,6 +198,63 @@ button:hover {
 	background-color: #ccffff; 
 }*/
 
+=======
+
+.modal2-content {
+    background-color: #80ffff;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from t
+    border: 1px solid #888;
+    width: 50px; /* Could be more or less, depending on screen size */
+}
+.modal3 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal3-content {
+    background-color: #80ffff;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from t
+    border: 1px solid #888;
+    width: 50px; /* Could be more or less, depending on screen size */
+}
+.animate {
+    animation: animatezoom 0.6s
+}
+
+span.forget {
+    float:right;
+    
+}
+.containe {
+    padding: 20px;
+	position:relative;
+}
+/*
+button {
+	background-color: #ccccff ;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+	opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+	background-color: #ccffff; 
+}*/
+
+>>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 .cancelbtn {
     padding: 14px 20px;
     background-color: #f44336;
@@ -263,6 +321,16 @@ button:hover {
     padding-right: 20px;
 }
 
+<<<<<<< HEAD
+.comeptiton_frame{
+	position:absolute;
+	left:208px;
+	
+	
+}
+
+=======
+>>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 </style>
 </head>
 <body>
@@ -273,7 +341,11 @@ button:hover {
   <button onclick="document.getElementById('id11').style.display='block'" style="width:auto; cursor:pointer">Update Profile Photo</button>
   <br>
   <br>
+<<<<<<< HEAD
+  <a href="user_gallary.php?variable=<?php echo $name?>">My Gallary</a>
+=======
   <a href="user_gallary.php">My Gallary</a>
+>>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
   <a href="Competition.php">Competition</a>
 </div>
 
@@ -322,13 +394,24 @@ button:hover {
     <div class="containe">
 	<p>UPLOAD COVER TEXT</p>
 	<hr><br>
+<<<<<<< HEAD
+		<textarea rows="4" cols="50" name="cover_txt" ></textarea>
+=======
 		<textarea rows="4" cols="50" name="cover_txt" >...</textarea>
+>>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 		<br><br>
 <input type="submit" value="submit">
     </div>
     
   </form>
 </div>
+<<<<<<< HEAD
+<div class = "comeptiton_frame">
+      <iframe src="user_page_iframe.php?var = <?php echo $name?>" name="yas" height="750px" width="1127px"></iframe>
+	  
+	</div>
+=======
+>>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 <script>
 // Get the modal
 var modal1 = document.getElementById('id11');

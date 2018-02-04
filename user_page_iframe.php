@@ -127,7 +127,14 @@ h1 {
   
 	
         <div id = "check">
+<<<<<<< HEAD
+	    <div id="div1-wrapper">
+		<div id="div1">
+		</div>
+		</div>
+=======
 	
+>>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 		
 		</div>
 		
@@ -144,6 +151,13 @@ h1 {
 
 </div>
 
+<<<<<<< HEAD
+                  <script src="http://code.jquery.com/jquery-latest.js">
+                  </script>
+ 
+				 
+=======
+>>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 
 <script>
 
@@ -182,6 +196,11 @@ function ShowImage(str) {
         xmlhttp.open("GET","show_cometiton_images.php?q="+str,true);
         xmlhttp.send();
     }
+<<<<<<< HEAD
+		
+	
+=======
+>>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 }
 
 
@@ -212,6 +231,20 @@ function update(str) {
         xmlhttp.open("GET","updating_vote.php?q="+str,true);
         xmlhttp.send();
     }
+<<<<<<< HEAD
+	
+	location.reload();
+	
+	  
+                     
+                   
+	
+	
+}
+
+
+
+=======
 }
 
 
@@ -239,6 +272,7 @@ function showvote(str) {
         xmlhttp.send();
     }
 }
+>>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 
 
 </script>

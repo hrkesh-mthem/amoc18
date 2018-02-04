@@ -25,7 +25,7 @@ if(isset($_POST['uname']) && !empty($_POST['uname'])  && isset($_POST['psw']) &&
     else {
       echo '<script type="text/javascript">
            alert("Invalid userid or password");
-          window.location.href = "homepage.html";
+          window.location.href = "homepage.php";
              </script>';
 	  
     }
@@ -34,7 +34,7 @@ if(isset($_POST['uname']) && !empty($_POST['uname'])  && isset($_POST['psw']) &&
 else{
 	echo '<script type="text/javascript">
            alert("Enter the userid or password");
-          window.location.href = "homepage.html";
+          window.location.href = "homepage.php";
              </script>';
 	
 	
