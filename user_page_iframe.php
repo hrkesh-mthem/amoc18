@@ -127,14 +127,10 @@ h1 {
   
 	
         <div id = "check">
-<<<<<<< HEAD
 	    <div id="div1-wrapper">
 		<div id="div1">
 		</div>
 		</div>
-=======
-	
->>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 		
 		</div>
 		
@@ -151,13 +147,10 @@ h1 {
 
 </div>
 
-<<<<<<< HEAD
                   <script src="http://code.jquery.com/jquery-latest.js">
                   </script>
  
 				 
-=======
->>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 
 <script>
 
@@ -196,11 +189,8 @@ function ShowImage(str) {
         xmlhttp.open("GET","show_cometiton_images.php?q="+str,true);
         xmlhttp.send();
     }
-<<<<<<< HEAD
 		
 	
-=======
->>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 }
 
 
@@ -231,7 +221,6 @@ function update(str) {
         xmlhttp.open("GET","updating_vote.php?q="+str,true);
         xmlhttp.send();
     }
-<<<<<<< HEAD
 	
 	location.reload();
 	
@@ -244,35 +233,6 @@ function update(str) {
 
 
 
-=======
-}
-
-
-function showvote(str) {
-	
-    if (str == "") {
-        
-        return;
-    } else {
-      	
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        }
-        xmlhttp.onreadystatechange = function() {
-			document.getElementById("check2").innerHTML = this.status;
-			
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("inside").innerHTML = this.response;
-				
-            }
-			else{}
-        };
-        xmlhttp.open("GET","show_vote.php?q="+str,true);
-        xmlhttp.send();
-    }
-}
->>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 
 
 </script>

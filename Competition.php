@@ -235,13 +235,13 @@ button:hover {
 <body>
 
 <div class="header">
-  <h2>Scroll Down</h2>
-  <p>Scroll down to see the sticky effect.</p>
+  <h2>PhotoLogy</h2>
+  <p>Participate And Explore Yourself</p>
 </div>
 
 <div id="navbar">
 <a href="javascript:void(0)"></a>
- <a href="javascript:void(0)">News</a>
+ <a href="javascript:void(0)">.</a>
 </div>
 
 <div class="content_outer">
