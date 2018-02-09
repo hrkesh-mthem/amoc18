@@ -160,10 +160,16 @@ $piccompe=$row['Competition_name'];
 $state_query = "select * from competition_gallary where competition_name='$piccompe' order by vote desc";
 
 $state_result = mysqli_query($conn,$state_query);
-$i=1;
+$i=0;
+$m=0;
 while($r = mysqli_fetch_array($state_result)){
 if($i<=3)
-{	?>
+{
+if($r['vote']!=$m)
+{	
+$m=$r['vote'];
+$i++;
+?>
 <li>
 
 <img src="uploads/<?php echo $r['image_name'];?>" / style="height:400px">
@@ -172,8 +178,21 @@ if($i<=3)
 </li>
 <?php
  }
- $i++;
-} ?>
+else if($r['vote']==$m)
+{
+
+	?>
+	<li>
+
+<img src="uploads/<?php echo $r['image_name'];?>" / style="height:400px">
+<div class="num"><?php echo $i; ?></div>
+<div class="text"><?php echo $r['username']; ?></div>
+</li>
+<?php
+}
+}
+}
+ ?>
 </ul>
 </div>
 </div>
