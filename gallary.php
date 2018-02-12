@@ -98,14 +98,26 @@ $database = "photograph";
 $conn = mysqli_connect($servername, $username, $password);
 mysqli_select_db($conn,$database);
 session_start();
-$user_name = 'yash';
+
+if(isset($_SESSION["USERNAME"])){
+$user_name = $_SESSION["USERNAME"];
+//echo $user_name;
 
 $query = mysqli_query($conn,"SELECT id FROM gallary where name = '$user_name'");
-while($yas = mysqli_fetch_assoc($query))
+$check = mysqli_fetch_array($query);
+
+//echo $check['id'];
+if($check){
+	$query2 = mysqli_query($conn,"SELECT id FROM gallary where name = '$user_name'");
+	
+while($yas = mysqli_fetch_assoc($query2))
 {
     $IDstore[] = $yas['id'];
-}
+	//echo $yas['id'];
+	
+	
 
+if(1){
 foreach($IDstore as $id){
 
 $sql = "select image from gallary where id = $id";
@@ -116,6 +128,7 @@ if (!$result || !$res) {
     printf("Error: %s\n", mysqli_error($conn));
     exit();
 }
+}
 
 
 
@@ -124,6 +137,7 @@ if (!$result || !$res) {
 
 
 while(($row = mysqli_fetch_array($result) )&& ($pic = mysqli_fetch_array($res))){
+	//echo $pic['image_name'];
 	?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <img  class="myImg" src="<?=$row[0]?>" width="175" height="200" alt="<?=$pic[0]?>">
@@ -132,9 +146,22 @@ while(($row = mysqli_fetch_array($result) )&& ($pic = mysqli_fetch_array($res)))
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
-<?php	
+<?php
+}
+}	else{
+	echo mysqli_error($conn);
+	
 }
 }
+}
+}
+else{
+	echo mysqli_error($conn);
+	//echo "error2";
+	
+}
+
+
 ?>
 <script>
 var modal = document.getElementById('myModal');

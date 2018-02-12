@@ -1,4 +1,28 @@
 <!DOCTYPE html>
+
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "photograph";
+session_start();
+
+if(isset($_GET['variable'])){
+$_SESSION["USERNAME"] = $_GET['variable'];
+$user_name = $_SESSION["USERNAME"];
+
+//echo $_GET['variable'];
+}else{
+	
+	//echo "error2";
+}
+if(isset( $_SESSION["USERNAME"])){
+$user_name = $_SESSION["USERNAME"];
+//echo $user_name;
+}
+
+?>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,7 +112,7 @@ body, html {
 	<input type="submit" value="submit">
    </form>
    <div class="absolute1">
-      <iframe src="gallary.php" name="yas" height="750px" width="1000px"></iframe>
+      <iframe src="gallary.php?var = <?php echo $user_name?>" name="yas" height="750px" width="1000px"></iframe>
 	  
 	</div>
 </div>

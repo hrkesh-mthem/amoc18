@@ -45,7 +45,7 @@ $pass = $_POST['password'];
 		//echo '<script type="text/javascript">alert("Username already taken!!!")</script>';
 		echo '<script type="text/javascript">
            alert("Username is already Taken!!!");
-          window.location.href = "homepage.html";
+          window.location.href = "homepage.php";
              </script>';
 	
     }
@@ -55,7 +55,7 @@ $pass = $_POST['password'];
 		//echo '<script type="text/javascript">alert("Username already taken!!!")</script>';
 		echo '<script type="text/javascript">
            alert("Email is already Registred !!!");
-          window.location.href = "homepage.html";
+          window.location.href = "homepage.php";
              </script>';
 		
 		
@@ -70,7 +70,7 @@ $pass = $_POST['password'];
 	   if ($conn->query($sql) === TRUE) {
 		   echo '<script type="text/javascript">
            alert("registration  Successfully");
-          window.location.href = "homepage.html";
+          window.location.href = "homepage.php";
              </script>';
 	//echo "Login ID : " .$use;}
 	}
@@ -83,7 +83,7 @@ $pass = $_POST['password'];
 	   if ($conn->query($sql) === TRUE) {
 		   echo '<script type="text/javascript">
            alert("registration  Successfully");
-          window.location.href = "homepage.html";
+          window.location.href = "homepage.php";
              </script>';
 	//echo "Login ID : " .$use;}
 	}

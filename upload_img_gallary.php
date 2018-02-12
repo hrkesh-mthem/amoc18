@@ -15,9 +15,10 @@ $target_file = $target_dir . basename($_FILES['file']["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-//$user_name = $_SESSION["USERNAME"];
-$user_name = 'yash';
-echo $user_name;
+if(isset($_SESSION["USERNAME"])){
+$user_name = $_SESSION["USERNAME"];
+//$user_name = 'yash';
+//echo $user_name;
 
 
 
@@ -52,16 +53,22 @@ if(isset($_FILES['file']['name']))
 				$file_to_saved = "uploads/".$name;
 				
                        				
-				    {
+				    
 				    $insert_img = mysqli_query($conn,"INSERT INTO gallary (name,image,image_name) values  ('$user_name','".$file_to_saved."','$image_name')");
                       if ($insert_img) {
     
-                         echo "Img inserted successfully";
-						 header("refresh:0;url=user_gallary.php");
-                                       }
+		                              echo '<script type="text/javascript">
+                                             alert("Image Uploaded Sucessfully");
+                                                  window.location.href = "user_gallary.php";
+                                                          </script>';
+					  }
+                                       
                        else{
-                              echo "There is something wrong with this code. Eff!";
-                              }
+                              
+		                              echo '<script type="text/javascript">
+                                             alert("There is something Wrong While updating.");
+                                                  window.location.href = "user_gallary.php";
+                                                          </script>';
 					}
 
 				
@@ -72,18 +79,36 @@ if(isset($_FILES['file']['name']))
 			}
 			else
 			{
-				echo 'There was an error.';
+				
+		          echo '<script type="text/javascript">
+                        alert("There Was an Erroe.");
+                        window.location.href = "user_gallary.php";
+                                     </script>';
 			}
 		}
 		else
 		{
-			echo 'File must be jpg/jpeg and must be 2MB or less.';
+			
+			
+		          echo '<script type="text/javascript">
+                        alert("File must be jpg/jpeg and must be 2MB or less.");
+                        window.location.href = "user_gallary.php";
+                                     </script>';
 		}
 	}
 	else
 	{
-		echo 'Please choose a file.';
+		
+		          echo '<script type="text/javascript">
+                alert("Please choose a Profile pic.");
+                              window.location.href = "user_gallary.php";
+                                         </script>';
 	}
+}
+
+}else{
+	echo "Not done";
+	
 }
 ?>
 

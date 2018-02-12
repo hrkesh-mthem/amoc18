@@ -14,7 +14,7 @@ $user_name = $_SESSION["USERNAME"];
 
 if(!empty($_POST['cover_txt'])){
 	$txt = $_POST['cover_txt'];
- $update_txt = mysqli_query($conn,"UPDATE cover SET cover_text = '$txt' WHERE name ='$user_name' ");
+ $update_txt = mysqli_query($conn,"UPDATE `cover` SET `cover_text` = '$txt' WHERE name ='$user_name' ");
 							if($update_txt){
 								 echo '<script type="text/javascript">
                                             alert(" UPDATE Successfully");
