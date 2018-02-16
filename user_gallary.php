@@ -87,22 +87,42 @@ body, html {
    
 }
 
+.Logout{
+	position:absolute;
+	left: 130px;
+	top:700px;
+	
+}
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.log {background-color: #f44336;} 
+.log:hover {background-color: #da190b;}
+
+
+
 #Home {background-color: #ff9999;}
-#News {background-color: #ffff66;}
-#Contact {background-color: #4d94ff;}
+#Home1 {background-color: #ffff66;}
+#Home2 {background-color: #4d94ff;}
 #About {background-color: #a64dff;}
 </style>
 </head>
-<body>
+<body    onunload="onBak()">
 <div class ="relative">
-<button class="tablink" onclick="openPage('Home', this, '#ff9999')" id="defaultOpen">Home</button>
-<button class="tablink" onclick="openPage('News', this, '#ffff66')" >News</button>
-<button class="tablink" onclick="openPage('Contact', this, '#4d94ff')">Contact</button>
+<button class="tablink" onclick="openPage('Home2', this, '#ff9999')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('Home1', this, '#ffff66')" >Home1</button>
+<button class="tablink" onclick="openPage('Home', this, '#ff9999')">Home2</button>
 <button class="tablink" onclick="openPage('About', this, '#a64dff')">About</button>
 
-<div id="Home" class="tabcontent">
-  <h3>Home</h3>
-  <p>Home is where the heart is..</p>
+<div id="Home2" class="tabcontent">
+  <h3>Gallary</h3>
+  <p>Uplaod and store Images</p>
   <form action="upload_img_gallary.php" method="POST" enctype="multipart/form-data">
 	
 	<input type="file" onchange="previewFile()" name = "file"><br>
@@ -111,25 +131,31 @@ body, html {
     </div>
 	<input type="submit" value="submit">
    </form>
+   
+   
    <div class="absolute1">
       <iframe src="gallary.php?var = <?php echo $user_name?>" name="yas" height="750px" width="1000px"></iframe>
 	  
 	</div>
+	<div class = "Logout">
+	<button class="btn log"> logout</button>
+	</div>
+	
 </div>
 
-<div id="News" class="tabcontent">
-  <h3>News</h3>
-  <p>Some news this fine day!</p> 
+<div id="Home1" class="tabcontent">
+  <h3>Home1</h3>
+  <p></p> 
 </div>
 
-<div id="Contact" class="tabcontent">
-  <h3>Contact</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
+<div id="Home" class="tabcontent">
+  <h3>Home2</h3>
+  <p>ns</p>
 </div>
 
 <div id="About" class="tabcontent">
   <h3>About</h3>
-  <p>Who we are and what we do.</p>
+  <p>Here My Profile.</p>
 </div>
 </div>
 <script>
@@ -169,7 +195,17 @@ function openPage(pageName,elmnt,color) {
 }
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+
+
+
+
+
+
+
 </script>
+
+
      
 </body>
 </html> 

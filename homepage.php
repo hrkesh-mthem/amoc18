@@ -9,9 +9,9 @@ $conn = mysqli_connect($servername, $username, $password);
 mysqli_select_db($conn,$database);?>
 
 <!DOCTYPE html>
+
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="StyleSheet.css" rel="stylesheet" />
 <style>
 html {
@@ -464,8 +464,10 @@ controlsContainer: '.flexslider'
 
 });
 
+
 </script>
 </head>
+
 <body>
 <div class="bg">
 
@@ -473,7 +475,7 @@ controlsContainer: '.flexslider'
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a onclick="document.getElementById('id01').style.display='block'" style="width:auto; cursor:pointer">Signup</a>
   <a  onclick="document.getElementById('id02').style.display='block'" style="width:auto; cursor:pointer">Log-in</a>
-  <a href="#">Contact</a>
+  <a href="result.php">Result</a>
 </div>
 
 <div id="main">

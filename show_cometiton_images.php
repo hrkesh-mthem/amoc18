@@ -125,7 +125,6 @@ while($row2 = mysqli_fetch_array($result2)){
 				   <p id="t_vote">vote: '.$row2['vote'].'  </p>';  */
 			
       	?>
-<<<<<<< HEAD
 		<div id="div1-wrapper">
 		<div class="fr"  id= "div1">
 		<p  id= "<?php $row2['id'] ?>">vote: <?php echo  $row2['vote'] ?></p>
@@ -143,23 +142,6 @@ while($row2 = mysqli_fetch_array($result2)){
 		</div>
         </div>
 		
-=======
-		<div class="fr">
-		<p  id= "<?php $row2['id'] ?>">vote: <?php echo  $row2['vote'] ?></p>
-		<script type= 'text/javascript'>
-		var string = parseInt("<?php echo $row2['id'] ?>");
-       showvote(string);
-		</script>
-        <?php
-		
-             if($check_vote_value[$cname]==0){
-         		echo '<button  id= "'.$row2['id'].'"  value = "'.$row2['id'].'" onclick = "update(this.value)"   >vote</button>';
-
-			 }?>
-               
-		
-        </div>
->>>>>>> 34e6a04eb1bd0657014ded3204406fdd91f0ec08
 				  </div>
 				     </div>
 					   </div>
