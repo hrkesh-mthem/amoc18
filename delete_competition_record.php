@@ -26,6 +26,8 @@ $column = $result['Competition_name'];
 $sql="DELETE FROM competition WHERE id = '".$q."'";
 $result = mysqli_query($conn,$sql);
 
+$off = mysqli_query($conn,"UPDATE `total_competition` set `status` = 1 where `Competition_name` = '$column'");
+
 
 $delete = mysqli_query($conn,"ALTER TABLE `$table` DROP COLUMN `$column`");
 //header('REFRESH:0; url:Competition.php');

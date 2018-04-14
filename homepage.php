@@ -465,6 +465,9 @@ controlsContainer: '.flexslider'
 });
 
 
+
+
+
 </script>
 </head>
 
@@ -475,7 +478,7 @@ controlsContainer: '.flexslider'
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a onclick="document.getElementById('id01').style.display='block'" style="width:auto; cursor:pointer">Signup</a>
   <a  onclick="document.getElementById('id02').style.display='block'" style="width:auto; cursor:pointer">Log-in</a>
-  <a href="result.php">Result</a>
+  <a href="#">Contact</a>
 </div>
 
 <div id="main">
@@ -679,11 +682,9 @@ if(y!=x)
   </form>
 </div>
 <script>
-// Get the modal
 var modal1 = document.getElementById('id01');
 var modal2 = document.getElementById('id02');
 
-// When the user clicks anywhere outside of the modal, close it
 
 window.onclick = function(event) {
     if (event.target == modal1 || event.target == modal2 ) {

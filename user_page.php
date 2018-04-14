@@ -273,6 +273,7 @@ button:hover {
 
 </style>
 </head>
+
 <body>
 
 <div class="sidenav">
@@ -283,6 +284,7 @@ button:hover {
   <br>
   <a href="user_gallary.php?variable=<?php echo $name?>">My Gallary</a>
   <a href="Competition.php">Competition</a>
+  <a href = "result.php">Result</a>
   <a href="Logout.php?var=<?php echo $name?>">Log Out</a>
   
 </div>

@@ -32,10 +32,12 @@ if($check2){
 }
 $insert_name = mysqli_query($conn,"INSERT INTO competition (Competition_name,year,month,day) values ('$name','$year','$month','$day')");
 
+$insert_compe_entry = mysqli_query($conn,"INSERT INTO `total_competition` (Competition_name) values ('$name')");
+
 
 $table = "main";
 $column = $name;
-echo $column;
+//echo $column;
 
 $add = mysqli_query($conn,"ALTER TABLE `$table` ADD `$column` VARCHAR(40) default 0");
 
@@ -195,7 +197,7 @@ input[type=text], input[type=password] {
 	position: absolute;
 	top: 100px;
     width: 155px;
-    height: 210px;
+    height: 190px;
     border: 3px solid #cc3399;
 	
 	
@@ -411,7 +413,6 @@ function DeleteUser(str) {
         return;
     } else { 
         if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         }
 		xmlhttp.onreadystatechange = function() {

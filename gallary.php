@@ -32,6 +32,7 @@
 }
 
 #caption {
+	position:relative;
     margin: auto;
     display: block;
     width: 80%;
@@ -82,6 +83,14 @@
     .modal-content {
         width: 100%;
     }
+}
+
+
+
+.img_left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
 }
 </style>
 
@@ -144,7 +153,9 @@ while(($row = mysqli_fetch_array($result) )&& ($pic = mysqli_fetch_array($res)))
 <div id="myModal" class="modal">
   <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
   <img class="modal-content" id="img01">
-  <div id="caption"></div>
+  
+  <div id="caption">
+  </div>
 </div>
 <?php
 }

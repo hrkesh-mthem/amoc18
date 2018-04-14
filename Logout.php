@@ -20,7 +20,7 @@ $_SESSION["USERNAME"] = $_GET['var'];
 if(isset( $_SESSION["USERNAME"])){
 
  $_SESSION["USERNAME"] = "";
- session_destroy();
+ 
  
  header('Location: homepage.php');
 }

@@ -22,7 +22,7 @@
 <h1 style="color:#663300; text-align:center; margin:10px;">Welcome to the Online Voting System</h1>
 <hr width="85%">
 <center>
-<iframe src="result1.php" name="yas" height="300" width="700"></iframe>
+<iframe src="view_nonvoters1.php" name="yas" height="300" width="700"></iframe>
 </center>
 </div>
 
